@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>原型与继承实现拖拽</title>
+    <script src="http://cdn.static.runoob.com/libs/jquery/1.10.2/jquery.min.js"></script>
+</head>
+<body>
+<script>
+    onload = function () {
+        function DragBox(id) {
+            console.log(id);
+            if (id !== undefined) {
+                this.box = document.getElementById(id);
+                var that = this;
+                this.box.onmousedown = function (e) {
+                    var evt = e || event;
+                    that.startMove(evt.pageX, evt.pageY); //开始移动
+                }
+            }
+        }
+
+        //原型
+        DragBox.prototype.startMove = function (x, y) {
+            this.disX = x - this.box.offsetLeft;
+            this.disY = y - this.box.offsetTop;
+            var that = this;
+            document.onmousemove = function (e) {
+                var evt = e || event;
+                that.moving(evt.pageX, evt.pageY);
+            };
+            document.onmouseup = function () {
+                that.stopMove();
+            }
+        };
+        DragBox.prototype.moving = function (x, y) {
+            console.log("**** DragBox.prototype.moving****");
+            this.box.style.left = x - this.disX + "px";
+            this.box.style.top = y - this.disY + "px";
+        };
+        DragBox.prototype.stopMove = function () {
+            document.onmousemove = document.onmouseup = null;
+        };
+
+
+        function DragBoxLimit(id) {
+            DragBox.call(this, id);//对象冒充继承属性
+        }
+
+        //重写了父类的moving方法
+        DragBoxLimit.prototype.moving = function (x,y) {
+            var left = x - this.disX;
+            var top = y - this.disY;
+            if (left <= 0) {
+                left = 0;
+            }
+            if (top <= 0) {
+                top = 0;
+            }
+            this.box.style.left = left + "px";
+            this.box.style.top = top + "px";
+        }
+
+        function DragBoxLimitText(id){
+            DragBoxLimit.call(this, id);//对象冒充继承属性
+        }
+
+        DragBoxLimitText.prototype = new DragBoxLimit();//原型链继承方法
+        //重写了父类的moving方法
+        DragBoxLimitText.prototype.moving = function (x, y) {
+            //对象冒充
+            DragBoxLimit.prototype.moving.call(this, x, y);
+            this.box.innerHTML = "left: " + this.box.offsetLeft + ", top:" + this.box.offsetTop;
+        };
+        new DragBox("box1");
+        new DragBoxLimit("box2");
+        new DragBoxLimitText("box3");
+    }
+</script>
+<div id="box1" style="width: 100px; height: 100px;background:blueviolet; position: absolute; left: 10px; top: 10px;"></div>
+<div id="box2" style="width: 100px; height: 100px; background: red; position: absolute; left: 10px; top: 120px;"></div>
+<div id="box3" style="width: 100px; height: 100px; background: yellow; position: absolute; left: 10px; top: 230px;"></div>
+</body>
+</html>
