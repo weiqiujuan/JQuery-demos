@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Event-Demo</title>
+    <link rel="stylesheet" href="../css/event.css">
+    <script src="http://cdn.static.runoob.com/libs/jquery/1.10.2/jquery.min.js"></script>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        #div1{
+            width:200px;
+            height:200px;
+            background-color: aquamarine;
+            position: absolute;
+            left:50%;
+            top:50%;
+            margin-left: -50px;
+            margin-top: -50px;
+        }
+    </style>
+</head>
+<body>
+<div id="div1"></div>
+<script>
+    $(function(){
+        var clientW=function () {
+            return document.documentElement.clientWidth||document.body.clientWidth;
+        };
+        var clientH=function(){
+            return document.documentElement.clientHeight||document.body.clientHeight;
+        }
+        function  drag(obj) {
+            obj.bind('mousedown',start);
+            function start(event) {
+                deltaX=event.clientX-obj.offset().left;//鼠标距离divX方向上的距离。
+                deltaY=event.clientY-obj.offset().top;//鼠标距离divY方向上的距离
+                $(document).bind('mousemove',move);
+                $(document).bind('mouseup',stop);
+                return false;
+            }
+            function move() {
+                var cx=clientH();
+                var ch=clientW();
+                if(deltaX>=0&&deltaY>=0){
+                    obj.css({
+                        'top':(event.clientY-deltaY)+'px',
+                        'left':(event.clientX-deltaX)+'px',
+                        'marginTop':0+'px',
+                        'marginLeft':0+'px'
+                    });
+                    if(event.clientY-deltaY<0){
+                        obj.css({
+                            'top':0+'px'
+                        });
+                    }else if(event.clientY>ch-obj.outerHeight()){
+                        obj.css({
+                            'top':ch-obj.outerHeight()+'px'
+                        });
+                    }
+                    if(event.clientX-deltaX<0){
+                        obj.css({
+                            'left':0+'px'
+                        });
+                    }else if(event.clientX>cx-obj.outerWidth()){
+                        obj.css({
+                            'left':cv-obj.outerWidth()+'px'
+                        });
+                    }
+                }
+                return false;
+            }
+            function stop() {
+                $(document).unbind('mousemove',move);
+                $(document).unbind('mouseup',move);
+            }
+        }
+        obj=$("#div1");
+        drag(obj);
+    });
+
+</script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+*{
+    margin:0;
+    padding:0;
+}
+body{
+    margin: 0 auto;
+    border:2px grey;
+    position: relative;
+    left: 30%;
+    top:30%;
+
+}
+.item{
+    background-color: darkgray;
+    width: 300px;
+    font-family: fantasy;
+    text-align: center;
+}
+.content{
+    float:left;
+     list-style-type: none;
+    margin:10px;
+}
+.button{
+    width: 60px;
+    height: 38px;
+    background-color: bisque;
+    text-align: center;
+}
+.img{
+    width:150px;
+    height: 100px;
+}
+.clear{
+    clear: both;
+}
+.tr{
+    background-color: aquamarine;
+}
+.alt{
+    background-color: aqua;
+}

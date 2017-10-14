@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo</title>
+    <link rel="stylesheet" href="../css/addclass.css">
+    <script src="http://cdn.static.runoob.com/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('p').addClass('item');
+            $('#view>li').addClass('content');
+            $('img[alt]').addClass('img');
+            $('tr').filter(':even').addClass('alt');
+            $('button').addClass('button').click(function () {
+                $('h1').hide();
+            })
+        });
+    </script>
+</head>
+<body>
+<h1>Hello world</h1>
+<div>
+    <p>Items</p>
+    <ul id="view">
+        <li>left
+            <ul>
+                <li>one</li>
+                <img src="../images/image1.jpg" alt="first">
+                <li>two</li>
+                <img src="../images/image2.jpg" alt="second">
+            </ul>
+        </li>
+        <li>right
+            <ul>
+                <li>one</li>
+                <img src="../images/images3.jpg" alt="first">
+                <li>two</li>
+                <img src="../images/images4.jpg" alt="second">
+            </ul>
+        </li>
+    </ul>
+</div>
+<div class="clear"></div>
+<div>
+    <table>
+        <h2>Languages</h2>
+        <tr>
+            <td>javascript</td>
+            <td>c++</td>
+            <td>java</td>
+        </tr>
+        <tr>
+            <td>easy</td>
+            <td>hard</td>
+            <td>esay</td>
+        </tr>
+        <tr>
+            <td>nomal</td>
+            <td>usualy</td>
+            <td>generally</td>
+        </tr>
+    </table>
+</div>
+<button style="clear: both">隐藏</button>
+</body>
+</html>
