@@ -15,7 +15,7 @@
                 var that = this;
                 this.box.onmousedown = function (e) {
                     var evt = e || event;
-                    that.startMove(evt.pageX, evt.pageY); //开始移动
+                    that.startMove(evt.pageX, evt.pageY);//开始移动
                 }
             }
         }
@@ -46,7 +46,7 @@
         function DragBoxLimit(id) {
             DragBox.call(this, id);//对象冒充继承属性
         }
-
+        DragBoxLimit.prototype = new DragBox();
         //重写了父类的moving方法
         DragBoxLimit.prototype.moving = function (x,y) {
             var left = x - this.disX;
