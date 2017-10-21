@@ -1,0 +1,23 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.hxcrltable{
+    border:1px solid #e3e3e3;
+    font-family:"Arial Black";
+    color: #6F524a;
+}
+.hxcrltable td{
+    height:50px;
+    width:50px;
+    border:1px solid #e3e3e3;
+    text-align: center;
+    cursor: default;
+}
+.hxcrltable tr:first-child td,
+.hxcrltable tr:first-child td span{
+    height:40px;!important;
+    background-color: #6F524a;
+    border: none;
+    color: white;
+}
