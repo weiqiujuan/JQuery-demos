@@ -1,0 +1,42 @@
+*{
+    margin: 0;
+    padding: 0;
+
+}
+#table {
+    border: 1px solid #bbffaa;
+    border-collapse: collapse;
+    width: 600px;
+    text-align: center;
+}
+
+tr {
+    height: 30px;
+}
+
+th {
+    border: 1px solid gray;
+}
+
+td {
+    border: 1px solid grey;
+}
+td a{
+    margin-right: 5px;
+    color: #f00000;
+
+}
+.popDiv{
+    width:500px;
+    padding:10px;
+    border:1px solid grey;
+    position: absolute;
+    left:50%;
+    margin-left: -250px;
+    top:100px;
+    display: none;
+    z-index: 4;
+}
+.popDiv p{
+    border-bottom: 1px solid red;
+}
