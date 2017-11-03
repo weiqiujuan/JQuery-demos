@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo</title>
+    <script src="http://cdn.static.runoob.com/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            //stop
+            $("a").hover(function () {
+                $("p").stop(false, true).slideDown(500);//false停止动画
+            }, function () {
+                $("p").stop(false, true).slideUp(500)
+            });
+            $("button").click(function () {
+                $("#donghua").animate({
+                    'top': "400px"
+                }, 2000).animate({
+                    "left": "800px"
+                }, 2000).animate({
+                    "top": "20px"
+                }, 2000).animate({
+                    "left": "30px"
+                }, 2000)
+            });
+            $("#stop").click(function () {
+                $("#donghua").stop(true, true);
+            });
+            $("#dequene").click(function () {
+                $("#donghua").dequeue();
+            });
+            $("#finish").click(function () {
+                $("#donghua").finish();
+            });
+            $(".delay input").click(function () {
+                $(".delay p").slideDown(500).delay(1000).slideUp(500)
+            });
+        });
+    </script>
+    <style>
+        .stop p {
+            width: 300px;
+            height: 300px;
+            background-color: #4aaa4a;
+            display: none;
+        }
+
+        #donghua {
+            width: 50px;
+            height: 50px;
+            background: blueviolet;
+        }
+
+        .delay p {
+            width: 300px;
+            height: 50px;
+            background: chartreuse;
+        }
+    </style>
+</head>
+<body>
+<div class="stop">
+    <a href="#">aaaa</a>
+    <p>bbbbbb</p>
+</div>
+<div>
+    <button>Run!!!</button>
+    <input id="stop" type="button" value="stop"><!--停止执行-->
+    <input id="dequene" type="button" value="dequene"><!--跳出队列-->
+    <input id="finish" type="button" value="finish"><!--直接在停止所有动画-->
+    <div id="donghua"></div>
+</div>
+<div class="delay">
+    <input type="button" value="delay">
+    <p>welcome</p>
+</div>
+</body>
+</html>
