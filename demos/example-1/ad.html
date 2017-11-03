@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>滚动广告</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        body{
+            margin:100px;
+        }
+        ul{
+            list-style-type: none;
+        }
+        li{
+            height:30px;
+            line-height: 30px;
+        }
+    </style>
+    <script src="http://cdn.static.runoob.com/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            setInterval(function () {
+                let newLi = $("ul>:first").clone(true);//true保证程序的兼容性
+                $("ul").append(newLi);
+                $("ul>:first").remove();
+            }, 2000)
+        });
+    </script>
+</head>
+<body>
+<ul>
+    <li>我是第１条广告</li>
+    <li>我是第２条广告</li>
+    <li>我是第３条广告</li>
+    <li>我是第４条广告</li>
+    <li>我是第５条广告</li>
+    <li>我是第６条广告</li>
+</ul>
+</body>
+</html>
