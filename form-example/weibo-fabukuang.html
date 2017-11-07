@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>微薄发布框</title>
+    <style>
+        * {
+            margin: 0 auto;
+            text-align: center;
+        }
+
+    </style>
+    <script src="http://cdn.static.runoob.com/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            let maxLenght = 140;
+            $("textarea").keyup(function () {
+                L = $(this).val().length;
+                $("strong").text(maxLenght - L);
+                if (parseInt($("strong").text()) < 0) {
+                    $("strong").text(0);
+                    let val = $(this).val().substring(0, 140);
+                    $(this).val(val);
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+<textarea name="" id="" cols="30" rows="10"></textarea>
+<span>You can input <strong style="color: rgba(255,27,52,1)">140</strong>numbers</span>
+</body>
+</html>

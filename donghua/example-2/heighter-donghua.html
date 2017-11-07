@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>高级动画</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        .title {
+            font-size: 25px;
+            border: 1px solid grey;
+            width: auto;
+        }
+
+        .images {
+            border: 1px solid;
+            width: auto;
+
+        }
+
+        .images img {
+            margin: 0 auto;
+            padding: 20px;
+            width: 200px;
+            height: 120px;
+            /* display: block;*/
+        }
+    </style>
+    <script src="http://cdn.static.runoob.com/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(".image").on("mouseenter mouseleave", function (event) {
+                /*let size = event.type === "mouseenter" ? 220 : 200;
+                 let padding = event.type === 'mouseenter' ? 0 : 20;
+                 $(this).find("img").stop().animate({
+                 width: size,
+                 height: size,
+                 paddingTop: padding,
+                 paddingRight: padding
+                 });*/
+                let image = $(this).find("img");
+                if (!$image.is(":animated") || event.type === "mouseleave") {
+                    let size = event.type === "mouseenter" ? 220 : 200;
+                    let padding = event.type === 'mouseenter' ? 0 : 20;
+                    $("image").animate({
+                        width: size,
+                        height: size,
+                        paddingTop: padding,
+                        paddingRight: padding
+                    });
+                }
+            });
+        });
+    </script>
+
+</head>
+<body>
+<div class="title">
+    jquery改变图片的大小，让其突出
+</div>
+<div class="images">
+    <img src="./images/ipadair.png" alt="ipadair">
+    <img src="./images/note3.jpg" alt="note">
+    <img src="./images/lenovopad.jpg" alt="lenovopad">
+</div>
+</body>
+</html>

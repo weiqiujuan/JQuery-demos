@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单事件</title>
+    <script src="http://cdn.static.runoob.com/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            /* $('input').focus(function(){
+             $('span').show();
+             })
+             $('input').blur(function(){
+             $('span').show();
+             })/!*与focus相反*!/
+             /!*当有元素改变的时候，并且触发blur事件，才算完成一次Change事件*!/
+             $('input').change(function(){
+             $('span').show();
+             })
+             /!*选中元素，触发事件*!/
+             $("input").select(function () {
+             $("span").show()
+             })*/
+            $("#form1").submit(function () {
+                alert("submit success");
+                e.preventDefault();/*阻止浏览器默认行为*/
+            })
+        });
+    </script>
+</head>
+<body>
+<!--<input type="text"value="1111">
+<span style="display: none">weiqiujuan</span>-->
+<form action="http://www.zixue.it">
+    <input type="text" value="111">
+    <input type="password" name="222" id="222" value="123">
+    <input type="submit" value="submit" id="form1">
+</form>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>页面搜索</title>
+    <style>
+        * {
+            margin: 0 auto;
+            text-align: center;
+
+        }
+
+        table {
+            margin-top: 50px;
+            width: 700px;
+            border: 1px solid #abcdef;
+            border-collapse: collapse;
+        }
+
+        tr {
+            height: 30px;
+        }
+
+        tr, td {
+            border: 1px solid #0e90d2;
+        }
+    </style>
+    <script src="http://cdn.static.runoob.com/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("input[type=button]").click(function () {
+                let text=$('input[type=text]').val();
+                $('table tr:not("#thead")').hide().filter(':contains("'+text+'")').show();
+            })
+        });
+    </script>
+</head>
+<body>
+<table>
+    <tr id="thead">
+        <th>Tel</th>
+        <th>Name</th>
+        <th>sex</th>
+    </tr>
+    <tr>
+        <th>12378</th>
+        <th>淘宝客服</th>
+        <th>w</th>
+    </tr>
+    <tr>
+        <th>10086</th>
+        <th>移动客服</th>
+        <th>w</th>
+    </tr>
+    <tr>
+        <th>12306</th>
+        <th>铁路局客服</th>
+        <th>m</th>
+    </tr>
+</table>
+<input type="text" name="" id="">
+<input type="button" value="搜索">
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo</title>
+    <style>
+        * {
+            margin: 0 auto;
+            padding: 50px;
+            text-align: center;
+        }
+    </style>
+    <script src="http://cdn.static.runoob.com/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            let checkAll = $("#selectAll");
+            let checkNone = $("#selectNone");
+            let checkOver = $("#selectOver");
+            let checkbox = $("#checkbox>:checkbox");
+
+            checkAll.click(function () {
+                checkbox.attr("checked", true);
+            });
+            checkNone.click(function () {
+                checkbox.attr("checked", false);
+            });
+            checkOver.click(function () {
+                checkbox.each(function () {
+                    $(this).attr("checked", !$(this).attr("checked"));
+                });
+            });
+
+
+        });
+    </script>
+</head>
+<body>
+<div id="checkbox">
+    <input type="checkbox" name="" id="eat" checked="checked">eat
+    <input type="checkbox" name="" id="drink">drink
+    <input type="checkbox" name="" id="play">play
+    <input type="checkbox" name="" id="happy">happy
+</div>
+<div id="btn">
+    <input type="button" value="all-select" id="selectAll">
+    <input type="button" value="all-not-select" id="selectNone">
+    <input type="button" value="over-select" id="selectOver">
+</div>
+</body>
+</html>
