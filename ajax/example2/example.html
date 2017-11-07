@@ -5,12 +5,27 @@
     <title>Demo</title>
     <script src="http://cdn.static.runoob.com/libs/jquery/1.10.2/jquery.min.js"></script>
     <script>
-        $(document).ready(function(){
-
+        $(document).ready(function () {
+            $("input").click(function () {
+                let ul = $("#info>ul");
+                $.ajax({
+                    url: "example2.php" + Math.random(),
+                    type: "get",
+                    success: function (data) {
+                        let result = eval(data);
+                        for (let i = 0; i < result.length,i++){
+                            ul.append("<li>"+result[i].title+"<em>"+result[i].publicTime+"</em></li>");
+                        }
+                    }
+                })
+            })
         });
     </script>
 </head>
 <body>
-
+<input type="button" value="获取新闻列表">
+<div id="info">
+    <ul></ul>
+</div>
 </body>
 </html>
