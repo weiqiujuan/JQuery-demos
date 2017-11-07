@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>load请求数据</title>
+    <style>
+        .load{
+            width:500px;
+            height:300px;
+            border: 1px solid #0e90d2;
+        }
+    </style>
+    <script src="http://cdn.static.runoob.com/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("input[type=button]").click(function () {
+                /* $("load").load(url,data,callback);*/
+                $("load").load("example-2.html?data="+Math.random()+" #text2");/*加载text文件*/
+            })
+        });
+    </script>
+
+</head>
+<body>
+<input type="button" value="加载">
+<div class="load"></div>
+</body>
+</html>

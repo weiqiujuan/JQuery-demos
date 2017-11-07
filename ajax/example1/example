@@ -1,0 +1,18 @@
+<div id="text">
+    <ul>
+        <li>我们只需要纯文本的数据</li>
+        <li>返回标识符
+            <span>1 代表用户名已经被注册  br</span>
+            <span>２　代表用户名不允许被注册</span>
+            <span>３　代表用户名可以注册</span>
+        </li>
+        <li>返回一个数组与json结合的格式
+            <span>
+            [{
+            title:"新闻标题"，
+            time:"新闻时间"
+            }]
+        </span>
+        </li>
+    </ul>
+</div>

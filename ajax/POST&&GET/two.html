@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>POST&&GET请求数据</title>
+    <script src="http://cdn.static.runoob.com/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("input[type=button]").click(function () {
+                /*$.get(url, senddata, Callback, datatype){}*/
+                let url="propcess.php";
+                let sendData={"username":$("#username").val()}
+                $.get(url,sendData,function (data) {
+                  if(data==="true"){
+                      $("div").html("用户名可以使用");
+                  }else{
+                      $("div").html("用户名不可使用");
+                  }
+                   /*$("div").html(data);*/
+                })
+            })
+        });
+
+    </script>
+
+</head>
+<body>
+<input type="text" name="username" id="username">
+<input type="button" value="检验">
+<div></div>
+</body>
+</html>

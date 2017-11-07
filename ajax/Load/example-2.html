@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test</title>
+    <style>
+    </style>
+    <script src="http://cdn.static.runoob.com/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            let send={"username":$("#username").val()};
+            $("div").load("propcess.php",send,function (data,XMLHttpRequest) {
+               alert(data);
+            })
+        });
+    </script>
+
+</head>
+<body>
+<ul id="test1">
+    <li>111111</li>
+    <li>222222</li>
+    <li>333333</li>
+</ul>
+<ul id="test2">
+    <li>aaaaaa</li>
+    <li>bbbbbb</li>
+    <li>cccccc</li>
+</ul>
+</body>
+</html>

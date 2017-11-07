@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数据格式约定</title>
+    <script src="http://cdn.static.runoob.com/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("input").click(function () {
+                $.ajax({
+                    url:"example1.php"+Math.random(),
+                    type:"get",
+                    success:function (data) {
+                        /*$("#info").html();*/
+                        let res=eval(data);/*解析字符串成为数组*/
+                        $("#info").html(res[0].title);
+                    }
+                });
+            });
+        })
+    </script>
+
+</head>
+<body>
+<input type="button" value="获取信息">
+<div id="info"></div>
+
+</body>
+</html>

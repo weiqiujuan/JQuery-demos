@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>eval</title>
+</head>
+<body>
+<script>
+    let a = '[1,2,3,4]';
+    alert(typeof(a));//string类型
+
+    let b=eval(a);//将字符串解析成一个js代码
+    alert(b[0]);
+
+    let c='alert("hello")';
+    alert(eval(c))//运行结果hello
+</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>get&&post</title>
+    <style>
+        .load {
+            width: 500px;
+            height: 300px;
+            border: 1px solid #0e90d2;
+        }
+    </style>
+    <script src="http://cdn.static.runoob.com/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("input[type=button]").click(function () {
+                /*$.get(url, senddata, Callback, datatype){}*/
+                $.get("text?data="+Math.random(),function (data) {
+                    $(".load").html(data);
+                })
+            })
+        });
+    </script>
+</head>
+<body>
+<input type="button" value="加载">
+<div class="load"></div>
+</body>
+</html>

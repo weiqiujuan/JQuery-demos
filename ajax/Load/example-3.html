@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>load请求数据</title>
+    <script src="http://cdn.static.runoob.com/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("input[type=button]").click(function () {
+                /*发送的参数形式必须是Json格式*/
+                let send = {"username":$("#username").val}
+                $("div").load("propcess.php",send,function(data){
+                         alert(data);
+                })
+            })
+        });
+    </script>
+
+</head>
+<body>
+<input type="text" name="username" id="username">
+<input type="button" value="检验">
+<div></div>
+</body>
+</html>
