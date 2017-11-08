@@ -1,4 +1,5 @@
 <?php
+sleep(3)
 echo'[
 {
 "title":"计划生育政策"

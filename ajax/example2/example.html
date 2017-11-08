@@ -13,18 +13,25 @@
                     type: "get",
                     success: function (data) {
                         let result = eval(data);
-                        for (let i = 0; i < result.length,i++){
+                        for (let i = 0; i < result.length;i++){
                             ul.append("<li>"+result[i].title+"<em>"+result[i].publicTime+"</em></li>");
                         }
                     }
                 })
-            })
+            });
+            $(document).ajaxStart(function () {
+                $("#loading").show();
+            }).ajaxStop(function () {
+                $("#loading").hide();
+            });
         });
+        
     </script>
 </head>
 <body>
 <input type="button" value="获取新闻列表">
 <div id="info">
+    <img src="ajax-loader%20(1).gif" alt="loding-img" style="display: none">
     <ul></ul>
 </div>
 </body>
