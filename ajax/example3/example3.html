@@ -2,9 +2,36 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Demo</title>
+    <script src="http://cdn.static.runoob.com/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("input[type=button]").click(function () {
+                let data = $("form").serialize();//获取表单数据，只能在form标签上用
+                alert(data);
+                $.ajax({
+                    url: "example3.php?" + Math.random(),
+                    type: "post",
+                    data: data,
+                    success: function (data) {
+                    }
+                })
+            })
+        })
+    </script>
 </head>
 <body>
-$END$
+<!--请求页面和请求的页面编码格式必须一致-->
+<input type="button" value="獲得数据">
+<div></div>
+
+<form id="form">
+    用户名：<input type="text" name="userName" id="username"><br>
+    邮箱地址：<input type="text" name="userAddress" id="userAddress"><br>
+    url地址：<input type="text" name="url" id="url"><br>
+    qq：<input type="text" name="qq" id="qq"><br>
+    weChat:<input type="text" name="weChat" id="weChat"><br>
+    <input type="button" value="提交">
+</form>
 </body>
 </html>

@@ -2,9 +2,39 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Demo</title>
+    <script src="http://cdn.static.runoob.com/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("input").click(function () {
+                $.ajax({
+                    url: "example4.php?" + Math.random(),
+                    type: "get",
+                    timeout: 1000,//请求时间
+                    success: function (data) {
+                        $("div").html(data);
+                    },
+                    error: function (jqXHR, textStatus, errorThrow) {
+                        /* alert("textStatus:"+textStatus);
+                         alert("errorThrow:"+errorThrow)*/
+                        if (errorThrow === "Not Found") {
+                            $("span").html("你请求的地址不存在");
+                        }
+                        if (textStatus === timeout) {
+                            $("span").html("请求超时，请重新刷新页面")
+                        }
+                    }
+                })
+            });
+            $(document).ajaxError(function () {
+                $("span").html("ajax请求发生错误");
+            });//全局代码
+        })
+    </script>
 </head>
 <body>
-$END$
+<input type="button" value="获取数据">
+<div></div>
+<span style="color: red;"></span>
 </body>
 </html>
