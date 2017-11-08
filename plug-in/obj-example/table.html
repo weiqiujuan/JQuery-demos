@@ -2,9 +2,88 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Table</title>
+    <style>
+        table{
+            width:100%;
+            border: 1px solid #abcdef;
+            border-collapse: collapse;
+        }
+        th,td{
+            height: 28px;
+            border: 1px solid #abcdef;
+            text-align: center;
+        }
+        .evenRow{
+            background-color: #38a38a;
+        }
+        .oddRow{
+            background-color: #0099ff;
+        }
+        .nowRow{
+            background-color: yellow;
+        }
+    </style>
+    <script src="http://cdn.static.runoob.com/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="table.js"></script>
+    <script>
+        $(function () {
+            $("table1").table({
+                eventRowClass: 'evenRow',
+                oddRowClass: 'oddRow',
+                currentRowClass: 'nowRow',
+                eventType:"click"
+            });
+        })
+    </script>
 </head>
 <body>
-$END$
+<!--
+需求：开发一个插件，要求奇数行的颜色是＃38a38a,偶数行的颜色是＃09F,当鼠标移动到当前行的时候，颜色变为黄色，当鼠标离开时，恢复之前的颜色
+-->
+<table id="table1">
+    <tr>
+        <th>name</th>
+        <th>age</th>
+        <th>height</th>
+        <th>weight</th>
+    </tr>
+    <tr>
+        <td>weiqiujuan</td>
+        <td>20</td>
+        <td>172</td>
+        <td>50</td>
+    </tr>
+    <tr>
+        <td>liuxiaotian</td>
+        <td>20</td>
+        <td>165</td>
+        <td>48</td>
+    </tr>
+    <tr>
+        <td>yiwanrou</td>
+        <td>20</td>
+        <td>168</td>
+        <td>49</td>
+    </tr>
+    <tr>
+        <td>weiqiujuan</td>
+        <td>20</td>
+        <td>172</td>
+        <td>50</td>
+    </tr>
+    <tr>
+        <td>liuxiaotian</td>
+        <td>20</td>
+        <td>165</td>
+        <td>48</td>
+    </tr>
+    <tr>
+        <td>yiwanrou</td>
+        <td>20</td>
+        <td>168</td>
+        <td>49</td>
+    </tr>
+</table>
 </body>
 </html>

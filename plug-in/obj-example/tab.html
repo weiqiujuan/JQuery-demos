@@ -2,9 +2,70 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Tab</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .tabNav {
+            margin: 30px 3px 0 20px;
+        }
+
+        .tabNav li {
+            list-style-type: none;
+            float: left;
+            width: 150px;
+            height: 26px;
+            line-height: 26px;
+            text-align: center;
+            border: 1px solid #abcdef;
+            border-bottom: none;
+            cursor: pointer;
+        }
+
+        .tabNav li.current {
+            background-color: #abcdef;
+            color: #fff;
+            font-weight: 700;
+
+        }
+
+        .tabContent {
+            clear: both;
+            margin: 30px 3px 0 20px;
+        }
+
+        .tabContent div {
+            border: 1px solid #abcdef;
+            display: none;
+            width: 455px;
+            height: 200px;
+        }
+    </style>
+    <script src="http://cdn.static.runoob.com/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="tab.js"></script>
 </head>
 <body>
-$END$
+<div class="tab">
+    <ul class="tabNav">
+        <li class="current">html</li>
+        <li>css</li>
+        <li>js</li>
+    </ul>
+    <div class="tabContent">
+        <div style="display: block">html</div>
+        <div>css</div>
+        <div>js</div>
+    </div>
+</div>
+<script>
+    $(function () {
+        $(".tab").tab({
+            eventType:"mouseover",
+        });
+    })
+</script>
 </body>
 </html>
