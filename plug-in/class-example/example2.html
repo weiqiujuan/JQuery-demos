@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo</title>
+    <script src="http://cdn.static.runoob.com/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="example2.js">
+      /*  $(document).ready(function () {
+            let div = $("#div1");
+            div.css({
+                    "top": ($(window).height() - div.height()) / 2,
+                    "left": ($(window).width() - div.width()) / 2,
+                    "position": "absolute"
+                }
+            )
+        })*/
+
+    </script>
+    <style>
+        #div1 {
+            width: 150px;
+            height: 150px;
+            background-color: rgba(255, 26, 35, 1);
+        }
+    </style>
+</head>
+<body>
+
+<div id="div1"></div>
+<script>
+    let div=$("#div1");
+    $.weiqiujuan.centerDiv(div);
+</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo</title>
+    <script src="http://cdn.static.runoob.com/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="example1.js"></script>
+</head>
+<body>
+<input type="button" value="点击">
+<script>
+    let a="我是一个通过调用插件参数弹出的窗口";
+    let b="我是第一个通过extend调用插件参数弹出的窗口";
+    let c="我是第二个通过extend调用插件参数弹出的窗口";
+    let d="我是有命名空间警告窗口";
+    $("input").click(function () {
+        $.myAlertOne(a);
+        $.myAlertTwo(b);
+        $.myAlertThree(c);
+        $.weiqiujuan.myAlertFour(d)
+    });
+</script>
+
+</body>
+</html>
