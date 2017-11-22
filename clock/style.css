@@ -1,0 +1,116 @@
+* {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+/*表盘style*/
+.wrapper {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin: 100px auto;
+    border-radius: 50%;
+    overflow: hidden;
+    background: #333333;
+}
+
+/*刻度style*/
+.line-hour, .line-min {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -85px;
+    margin-top: -85px;
+    width: 170px;
+    height: 170px;
+}
+
+.line-min li, .line-hour li {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    margin-left: -1px;
+    background: #ffffff;
+    transform-origin: 1px 85px;
+}
+
+.line-min li {
+    width: 2px;
+    height: 5px;
+}
+
+.line-hour li {
+    width: 2px;
+    height: 10px;
+}
+
+.number {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -75px;
+    margin-top: -75px;
+    width: 150px;
+    height: 150px;
+}
+
+.number li {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    color: #ffffff;
+    transform-origin: 0 75px;
+}
+
+.number li span {
+    display: inline-block;
+}
+
+/*指针style*/
+.pointer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 200px;
+}
+
+.pointer .pointer-hour, .pointer .pointer-min, .pointer .pointer-sec {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -2px;
+    width: 40px;
+    height: 4px;
+    background: #ffffff;
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+    transform-origin: left;
+}
+
+.pointer .pointer-min {
+    margin-top: -2px;
+    width: 55px;
+    height: 3px;
+    background: orange;
+}
+
+.pointer .pointer-sec {
+    margin-top: -1px;
+    width: 70px;
+    height: 2px;
+    background-color: red;
+}
+
+.pointer .pointer-radious {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -5px;
+    margin-left: -5px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #ffffff;
+}

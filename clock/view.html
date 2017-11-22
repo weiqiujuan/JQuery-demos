@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>定制时钟</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrapper">
+    <svg width="200" height="200">
+        <defs>
+            <radialGradient spreadMethod="pad" id="svg_13">
+                <stop offset="0" stop-color="#ffffff"/>
+                <stop offset="1" stop-color="#000000"/>
+            </radialGradient>
+        </defs>
+        <rect x="-1" y="-1" width="202" height="202" id="canvas_background" fill="url(#svg_13)"/>
+        <path id="svg_14" d="m100.157738,85.23286c14.018035,-40.164232 68.941155,0 0,51.639727c-68.941155,-51.639727 -14.018035,-91.80396 0,-51.639727z" fill-opacity="null" stroke-opacity="null" stroke-width="1.5" stroke="#000" fill="none"/>
+ <text xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="24" id="svg_20" y="107.2" x="74" fill-opacity="null" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#000000">WQJ</text>
+    </svg>
+    <ul class="line-min"></ul>
+    <ul class="line-hour"></ul>
+    <ul class="number"></ul>
+    <ul class="pointer">
+        <li class="pointer-hour"></li>
+        <li class="pointer-min"></li>
+        <li class="pointer-sec"></li>
+        <li class="pointer-radious"></li>
+    </ul>
+    <script src="jquery.js"></script>
+    <script src="index.js"></script>
+</div>
+</body>
+</html>
