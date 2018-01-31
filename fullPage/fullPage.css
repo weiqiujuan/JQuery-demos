@@ -1,0 +1,52 @@
+/*page整体展示*/
+.section { text-align: center; font: 50px "Microsoft Yahei"; color: #fff;}
+.section1{
+    background-image: url("images/1.jpg");
+}
+.section2{
+    background-image: url("images/2.jpg");
+}
+.section2 p{
+    position: relative;
+    left:-120%;
+}
+.section3{
+    background-image: url("images/3.jpg");
+}
+.section3 p{
+    position: relative;
+    bottom:-120%;
+}
+.section4{
+    background-image: url("images/4.jpg");
+}
+.section4 p{
+    position: relative;
+    left:-120%;
+}
+/*菜单导航展示*/
+#menu{
+    margin:0;
+    padding:0;
+    position: fixed;
+    left:10px;
+    top:10px;
+    list-style-type: none;
+    z-index: 70;
+}
+#menu li{
+    float: left;
+    margin:0 10px 0 0;
+    font-size: 14px;
+}
+#menu a{
+    float: left;
+    padding:10px 20px;
+    background-color: #ffffff;
+    color: #333333;
+    text-decoration: none;
+}
+#menu .active a{
+    color: #ffffff;
+    background-color: #333333;
+}
