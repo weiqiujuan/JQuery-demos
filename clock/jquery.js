@@ -2979,8 +2979,8 @@ var rootjQuery,
 
 			} else {
 				// /^(?:       \s*(<[\w\W]+>)[^>]*       |             #([\w-]+))$/
-				// '<div>demo'                           |         #demo
-				//['<div>demo', '<div>', undefined]           |         ['<div>demo',undefined, demo]
+				// '<div>demoPre'                           |         #demoPre
+				//['<div>demoPre', '<div>', undefined]           |         ['<div>demoPre',undefined, demoPre]
 			
 
 	    		

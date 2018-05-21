@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Loading</title>
+    <link rel="stylesheet" href="demo.css">
+    <script type="text/javascript">
+        let pre = 0;
+        let timer = setInterval(function () {
+            $('.bar').css('width', pre + "%");
+            pre += 1;
+            if (pre > 100) {
+                $(".pageLoading").addClass('complete');
+                setTimeout(function () {
+                    $(".text").html('<h2>Hello </br>weiqiujuan</h2>')
+                }, 5000);
+                clearInterval(timer);
+            }
+        }, 30);
+    </script>
+</head>
+
+<body>
+
+<div class="text">
+    <h2 class="monsterText">Hello <br> weiqiujuan</h2>
+    <h3 class="opText">We will eat you!</h3>
+</div>
+
+<div class="monster first">
+    <div class="eye">
+        <div class="smallEyes">
+
+        </div>
+    </div>
+    <div class="mouth"></div>
+</div>
+<div class="monster second">
+    <div class="eye">
+        <div class="smallEyes">
+
+        </div>
+    </div>
+    <div class="mouth"></div>
+</div>
+
+<div class="pageLoading">
+    <div class="monster">
+        <div class="eye">
+            <div class="smallEyes">
+
+            </div>
+            <div class="mouth"></div>
+        </div>
+    </div>
+    <div class="loading">
+        <div class="bar"></div>
+    </div>
+</div>
+
+</body>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+</html>
